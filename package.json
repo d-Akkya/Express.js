@@ -1,0 +1,15 @@
+{
+  "name": "express-masterclass",
+  "version": "1.0.0",
+  "description": "Learn ExpressJS from scratch",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "d-Akkya",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
