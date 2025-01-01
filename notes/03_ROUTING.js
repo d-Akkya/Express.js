@@ -10,24 +10,38 @@ const port = 5000;
 
 // GET REQUEST
 app.get("/", (req, res) => {
-    res.send("Hello World");
-})
+  res.send("Hello World");
+});
 
 // POST REQUEST
 app.post("/submit", (req, res) => {
-    res.send("Data submitted successfully!");
-})
+  res.send("Data submitted successfully!");
+});
 
 // PUT REQUEST
 app.put("/update", (req, res) => {
-    res.send("Data updated!");
-})
+  res.send("Data updated!");
+});
 
 // DELETE REQUEST
 app.delete("/delete", (req, res) => {
-    res.send('Data deleted!');
-})
+  res.send("Data deleted!");
+});
+
+// ROUTE PARAMETERS
+app.get("/product/:id/:name", (req, res) => {
+  // 1st way of grabbing the data
+  //   const id = req.params.id;
+  //   const name = req.params.name;
+
+  // 2nd way of grabbing the data
+  const { id, name } = req.params;
+
+  res.send(`Product id is ${id} and name is ${name}`);
+  // grab the id
+  // further process the id and get the product
+});
 
 app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
+  console.log(`Server is running on port ${port}`);
 });
