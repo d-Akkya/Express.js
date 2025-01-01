@@ -42,6 +42,13 @@ app.get("/product/:id/:name", (req, res) => {
   // further process the id and get the product
 });
 
+// QUERY STRING
+app.get("/search", (req, res) => {
+  // I have to grab the title from the query
+  const { title, price } = req.query;
+  return res.send(`You searched for: ${title} with price: ${price}`);
+});
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
